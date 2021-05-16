@@ -2,19 +2,39 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { MyCoursesComponent } from './my-courses/my-courses.component';
-import { CertificatesComponent } from './certificates/certificates.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { UserComponent } from './user.component';
+import { ScoreIllustrationComponent } from './shared/score-illustration/score-illustration.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SettingComponent } from './setting/setting.component';
+import { SharedModule } from '../shared/shared.module';
+import { AccountComponent } from './setting/account/account.component';
+import { NotificationComponent } from './setting/notification/notification.component';
+import { PrivacyComponent } from './setting/privacy/privacy.component';
+import { BillingComponent } from './setting/billing/billing.component';
+import { CloseComponent } from './setting/close/close.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, MyCoursesComponent, CertificatesComponent, FooterComponent, HeaderComponent, UserComponent],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    ProfileComponent,
+    SettingComponent,
+    UserComponent,
+    AccountComponent,
+    NotificationComponent,
+    PrivacyComponent,
+    BillingComponent,
+    CloseComponent,
+    CartComponent
+  ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    SharedModule
   ]
 })
 export class UserModule { }

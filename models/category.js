@@ -2,14 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const categorySchema = new Schema({
-  name: { type: String, require: true },
-  for: { type: String, require: true, default: 'outlet', enum: ['outlet', 'product']},
-  classification: {
-    type: Schema.ObjectId,
-    ref: 'classification',
-    require: true
-  },
-  date: { type: Date, require: true, default: Date.now() },
+  name: {type: String, require: true },
+  image: {type: String, require: true },
 });
 
 module.exports = mongoose.model('category', categorySchema, 'categories');

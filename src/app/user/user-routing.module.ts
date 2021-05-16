@@ -1,26 +1,39 @@
 import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CertificatesComponent } from './certificates/certificates.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { MyCoursesComponent } from './my-courses/my-courses.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AccountComponent } from './setting/account/account.component';
+import { BillingComponent } from './setting/billing/billing.component';
+import { CloseComponent } from './setting/close/close.component';
+import { NotificationComponent } from './setting/notification/notification.component';
+import { PrivacyComponent } from './setting/privacy/privacy.component';
+import { SettingComponent } from './setting/setting.component';
 import { UserComponent } from './user.component';
 
 const routes: Routes = [{
-  path: '',
-  redirectTo: 'learner/home',
-  pathMatch: 'full'
-},{
-  path: 'learner',
+  path: 'user',
   component: UserComponent,
   children: [{
-    path: 'home',
-    component: DashboardComponent
+    path: '',
+    component: ProfileComponent,
   }, {
-    path: 'mycourses',
-    component: MyCoursesComponent
-  }, {
-    path: 'certificates',
-    component: CertificatesComponent
+    path: 'setting',
+    component: SettingComponent,
+    children: [{
+      path: '',
+      component: AccountComponent
+    }, {
+      path: 'billing',
+      component: BillingComponent
+    }, {
+      path: 'notification',
+      component: NotificationComponent
+    }, {
+      path: 'privacy',
+      component: PrivacyComponent
+    }, {
+      path: 'close',
+      component: CloseComponent
+    }]
   }]
 }];
 

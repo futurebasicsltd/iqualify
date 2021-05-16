@@ -66,14 +66,12 @@ expressApp.use(cors(corsOptions));
 const authRoutes = require('./routes/auth.js');
 const assetsRoutes = require('./routes/assets.js');
 const userRoutes = require('./routes/user.js');
-const adminRoutes = require('./routes/admin.js');
 
 
 // use routes
 expressApp.use('/api/auth', authRoutes);
 expressApp.use('/api/assets', assetsRoutes);
 expressApp.use('/api/user', userRoutes);
-expressApp.use('/api/admin', adminRoutes);
 
 
 // redirects to angular
@@ -91,21 +89,23 @@ mongoose.connection.on("open", function(ref) {
 
 mongoose.connection.on("error", function(err) {
   console.log("Could not connect to mongo server!");
+  console.log('mongodb+srv://iqualify:' + process.env.DB_PASSWORD + '@cluster0.pzzln.mongodb.net/iqualify?retryWrites=true&w=majority');
   return console.log(err);
 });
 
-db = mongoose.connect('mongodb+srv://root:' + process.env.DB_PASSWORD + '@cluster0.pnv64.mongodb.net/soko?retryWrites=true&w=majority', {
+db = mongoose.connect('mongodb+srv://iqualify:' + process.env.DB_PASSWORD + '@cluster0.pzzln.mongodb.net/iqualify?retryWrites=true&w=majority', {
 // db = mongoose.connect('mongodb+srv://root:' + process.env.DB_PASSWORD + '@school-yxbkk.mongodb.net/amplify?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   socketTimeoutMS: 30000,
   keepAlive: true,
-});
+}); 
 
 //init the server
 expressApp.listen(port, () => {
    console.log(`listening on port ${port}`);
 });
+
 
 module.exports = expressApp;
 

@@ -16,6 +16,10 @@ import { AnalyticsComponent } from './analytics/analytics.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { AdminComponent } from './admin.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SharedModule } from '../shared/shared.module';
+import { CategoriesComponent } from './categories/categories.component';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
@@ -33,10 +37,11 @@ import { AdminComponent } from './admin.component';
     EarningsComponent, 
     LessonComponent, 
     AnalyticsComponent, 
-    AdminComponent],
+    AdminComponent, DashboardComponent, CategoriesComponent, UsersComponent],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    SharedModule
   ]
 })
 export class AdminModule { }

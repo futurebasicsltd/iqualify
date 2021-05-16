@@ -1,0 +1,25 @@
+
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">
+              User Account Setting
+            </h1>
+          </div>
+        <div class="row">
+        <div class="col-lg-2 pt-0">
+            <div class="list-group list-group-transparent mb-0">
+            
+                <a class="list-group-item list-group-item-action active" [routerLink]="['/user/setting']">Account</a>
+                <a class="list-group-item list-group-item-action"  [routerLink]="['/user/setting/notification']">Notification</a>
+                <a class="list-group-item list-group-item-action"  [routerLink]="['/user/setting/privacy']">Privacy</a>
+                <a class="list-group-item list-group-item-action"  [routerLink]="['/user/setting/billing']">Billing and Payouts</a>
+                <a class="list-group-item list-group-item-action"  [routerLink]="['/user/setting/close']">Close Account</a>
+            
+            </div>
+        </div>
+        <div class="col-lg-10">
+        <router-outlet></router-outlet>
+        </div>
+        </div>
+    </div>
+
