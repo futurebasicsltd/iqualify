@@ -1,0 +1,42 @@
+.lesson-tile {
+    margin-bottom: 20px;
+
+    .card {
+        .card-body{
+            position: relative;
+            .img-div {
+                height: 120px;
+                background: #1865f2;
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+                img {
+                    border-top-left-radius: 3px;
+                    border-top-right-radius: 3px;
+                    width: 100%;
+                }
+            }
+
+            .complete-wrapper {
+                position: absolute;
+                left: 0px;
+                right: 0px;
+                bottom: 0px;
+                height: 5px;
+                .complete-inner {
+                    left: 0px;
+                    bottom: 0px;
+                    height: 5px;
+                    width: 20%;
+                    background: #8e44ad;
+                    border-bottom-left-radius: 3px;
+                    border-bottom-right-radius: 3px;
+                    border-top-right-radius: 3px;
+                }
+            }
+        }
+    }
+    h5 {
+        
+        margin-top: 0px;
+    }
+}
